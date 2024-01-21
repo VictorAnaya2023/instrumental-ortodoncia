@@ -23,6 +23,7 @@ jobs:
         cache: 'npm'
         cache-dependency-path: './instrumental/package-lock.json'
     - run: cd instrumental
+    - run: npm install --package-lock-only
     - run: npm ci
     - run: npm run-script deploy
 
