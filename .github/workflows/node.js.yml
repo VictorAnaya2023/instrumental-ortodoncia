@@ -24,6 +24,7 @@ jobs:
         cache-dependency-path: './instrumental/package-lock.json'
     - run: npm install -g @angular/cli > /dev/null
     - run: npm install instrumental --package-lock-only
+    - run: npm --prefix ./instrumental install --save-dev @angular-devkit/build-angular
     - run: npm ci instrumental
     - run: npm --prefix ./instrumental run-script deploy
 
