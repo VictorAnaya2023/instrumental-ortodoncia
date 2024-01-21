@@ -22,8 +22,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: './instrumental/package-lock.json'
-    - run: cd instrumental
-    - run: npm install --package-lock-only
-    - run: npm ci
+    - run: npm install instrumental --package-lock-only
+    - run: npm ci instrumetal
     - run: npm run-script deploy
 
