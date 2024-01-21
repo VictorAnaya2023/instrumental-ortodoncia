@@ -1,1 +1,7 @@
-<p>videos works!</p>
+@for(tool of dummy_Data; track tool.nombre){
+    <mat-card class="video-card">
+        <mat-card-content>{{ tool.nombre }}</mat-card-content>
+        <img mat-card-image src="{{tool.imagen}}" alt="Photo of a Shiba Inu">
+    </mat-card>
+}
+  
