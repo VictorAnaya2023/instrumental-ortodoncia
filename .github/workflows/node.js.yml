@@ -22,6 +22,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: './instrumental/package-lock.json'
+    - run: npm install -g @angular/cli > /dev/null
     - run: npm install instrumental --package-lock-only
     - run: npm ci instrumental
     - run: npm --prefix ./instrumental run-script deploy
