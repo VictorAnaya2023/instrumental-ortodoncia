@@ -13,6 +13,7 @@ import {AsyncPipe} from '@angular/common';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { AuthService } from './services/auth.service';
 
 interface Video {
   nombre: string;
@@ -42,9 +43,10 @@ interface Video {
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
-  constructor(private responsive: BreakpointObserver) {
-    
-  }
+  isLoggedIn:boolean = this.authService.isAuth();
+  constructor(
+    private responsive: BreakpointObserver,
+    private authService:AuthService) {}
   title = 'instrumental';
   is_Mobile:boolean = false;
   isAdmin:boolean = false;
