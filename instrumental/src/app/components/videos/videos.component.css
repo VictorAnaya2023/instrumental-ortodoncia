@@ -3,7 +3,7 @@ mat-card{
 }
 
 .video-card{
-    max-width: 500px;
+    width: 90%;
     max-height: 200px;
 }
 
