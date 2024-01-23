@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import {BreakpointObserver, Breakpoints, LayoutModule} from '@angular/cdk/layout';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {Observable} from 'rxjs';
@@ -23,9 +25,11 @@ interface Video {
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet, 
+    RouterOutlet,
+    LayoutModule,
     MatToolbarModule,
-    MatIconModule, 
+    MatIconModule,
+    MatButtonModule, 
     MatMenuModule,
     FormsModule,
     MatFormFieldModule,
@@ -37,9 +41,12 @@ interface Video {
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  constructor(private responsive: BreakpointObserver) {
+    
+  }
   title = 'instrumental';
-
+  is_Mobile:boolean = false;
   isAdmin:boolean = false;
   myControl = new FormControl('');
   dummy_Data:Video[] = [
@@ -155,6 +162,14 @@ export class AppComponent {
   filteredOptions!: Observable<Video[]>;
 
   ngOnInit() {
+    
+    this.responsive.observe(Breakpoints.Handset).subscribe(res=>{
+      if(res.matches){
+        console.log('handset')
+        this.is_Mobile = true;
+      }
+    });
+
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value || '')),

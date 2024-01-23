@@ -3,28 +3,32 @@
     <img src="../assets/img/paulo blanco.png" alt="" class="logo">
   </span>
   <div class="nav-bar-menu">
+    @if(!is_Mobile){
     <form class="example-form">
       <mat-form-field class="example-full-width">
-        <mat-label>Number</mat-label>
-        <input type="text"
-               placeholder="Pick one"
-               aria-label="Number"
-               matInput
-               [formControl]="myControl"
-               [matAutocomplete]="auto">
+        <mat-label>Search</mat-label>
+        <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl"
+          [matAutocomplete]="auto">
         <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
           @for (option of filteredOptions | async; track option) {
-            <mat-option [value]="option.nombre">{{option.nombre}}</mat-option>
+          <mat-option [value]="option.nombre">{{option.nombre}}</mat-option>
           }
         </mat-autocomplete>
       </mat-form-field>
     </form>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" [matMenuTriggerFor]="menu">
+    }
+    @else {
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with search icon">
+      <mat-icon>search</mat-icon>
+    </button>
+    }
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+      [matMenuTriggerFor]="menu">
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
       @if(isAdmin){
-        <button mat-menu-item>Admin Area</button>
+      <button mat-menu-item>Admin Area</button>
       }
       <button mat-menu-item>Notificaciones</button>
       <button mat-menu-item>Mis Archivos</button>
