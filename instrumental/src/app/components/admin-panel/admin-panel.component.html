@@ -1,10 +1,14 @@
 <div class="main-container">
-    <div>
+    <div class="switch-container">
         <span>enable sing up</span>
-        <!-- <mat-slide-toggle></mat-slide-toggle> -->
+        <p-inputSwitch [(ngModel)]="checked"></p-inputSwitch>
+    </div>
+    <div class="upload-container">
+        <p-toast></p-toast>
+        <p-fileUpload styleClass="p-button-secondary" mode="basic" chooseLabel="upload video" name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" accept="image/*" [maxFileSize]="1000000" (onUpload)="onUpload($event)"></p-fileUpload>
     </div>
     <div>
-
+        <p-button styleClass="p-button-secondary" label="Home" (click)="redirectToHome()"></p-button>
     </div>
     
 </div>
