@@ -1,8 +1,8 @@
 <div class="main-container">
     <mat-card>
-        <img mat-card-image src="../../../assets/img/paulo_blanco.png" alt="Photo of a Shiba Inu">
+        <!-- <img mat-card-image src="../../../assets/img/paulo_blanco.png" alt="Photo of a Shiba Inu"> -->
         <mat-card-content>
-            <form (ngSubmit)="onSubmit()">
+            <div class="login-container">
                 <mat-form-field>
                     <mat-label>username</mat-label>
                     <input matInput>
@@ -15,8 +15,8 @@
                         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
                 </mat-form-field>
-                <button mat-raised-button type="submit">Log in</button>
-            </form>
+                <button mat-raised-button type="submit" (click)="login()">Log in</button>
+            </div>
         </mat-card-content>
     </mat-card>
 </div>

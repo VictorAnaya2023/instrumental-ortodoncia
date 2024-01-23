@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {BreakpointObserver, Breakpoints, LayoutModule} from '@angular/cdk/layout';
+import { Router, NavigationEnd } from '@angular/router';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -43,10 +44,19 @@ interface Video {
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
-  isLoggedIn:boolean = this.authService.isAuth();
+  isLoggedIn!:boolean;
   constructor(
     private responsive: BreakpointObserver,
-    private authService:AuthService) {}
+    private authService:AuthService,
+    private router: Router) {
+      this.router.events.subscribe((event) => {
+        if (event instanceof NavigationEnd) {
+          // Lógica a ejecutar después de que la navegación ha terminado
+          this.isLoggedIn = this.authService.isAuth();
+          console.log('Se ha redirigido a otra página:', event.url);
+        }
+      });
+    }
   title = 'instrumental';
   is_Mobile:boolean = false;
   isAdmin:boolean = false;
@@ -164,7 +174,7 @@ export class AppComponent implements OnInit {
   filteredOptions!: Observable<Video[]>;
 
   ngOnInit() {
-    
+    this.isLoggedIn = this.authService.isAuth();
     this.responsive.observe(Breakpoints.Handset).subscribe(res=>{
       if(res.matches){
         console.log('handset')

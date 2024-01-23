@@ -24,11 +24,10 @@ export class LoginComponent {
 
   constructor(private authService: AuthService, private router: Router){}
 
-  onSubmit(): void {
-    console.log('webos');
+  login(): void {
     // Realiza la lógica de autenticación
-    this.authService.isAuth();
-    console.log('webos3');
+    this.authService.login();
+    // console.log('webos3');
     // Redirige al usuario a la ruta deseada (por ejemplo, '/home')
     this.router.navigate(['/home']);
   }

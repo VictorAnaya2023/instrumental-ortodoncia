@@ -5,10 +5,18 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
   token = ''
-  
+  logged:boolean=false;
   constructor() { }
 
+  login(){
+    this.logged = true;
+  }
+
   isAuth(){
-    return this.token.length > 0;
+    if(this.logged){
+      return true;
+    }else{
+      return false;
+    }
   }
 }
