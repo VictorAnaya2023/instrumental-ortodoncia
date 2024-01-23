@@ -1,0 +1,6 @@
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Alinea verticalmente en el centro */
+    height: 100vh; /* Ajusta la altura al 100% del viewport para centrar verticalmente */
+  }
