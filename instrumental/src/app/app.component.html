@@ -1,6 +1,7 @@
+@if(isLoggedIn){
 <mat-toolbar>
   <span class="logo-container">
-    <img src="../assets/img/paulo blanco.png" alt="" class="logo">
+    <img src="../assets/img/paulo_blanco.png" alt="" class="logo">
   </span>
   <div class="nav-bar-menu">
     @if(!is_Mobile){
@@ -38,6 +39,7 @@
     </mat-menu>
   </div>
 </mat-toolbar>
+}
 
 
 <router-outlet />
