@@ -29,6 +29,7 @@ export class LoginComponent {
     this.authService.login();
     // console.log('webos3');
     // Redirige al usuario a la ruta deseada (por ejemplo, '/home')
+    this.router.navigate(['/admin-panel']);
     this.router.navigate(['/home']);
   }
 }

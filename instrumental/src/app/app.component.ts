@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {BreakpointObserver, Breakpoints, LayoutModule} from '@angular/cdk/layout';
 import { Router, NavigationEnd } from '@angular/router';
-
+import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -29,6 +29,7 @@ interface Video {
   imports: [
     RouterOutlet,
     LayoutModule,
+    CommonModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule, 
@@ -196,5 +197,9 @@ export class AppComponent implements OnInit {
 
   displayFn(video: Video): string {
     return video ? video.nombre : '';
+  }
+
+  redirectToAdmin() {
+    this.router.navigate(['/admin-panel']);
   }
 }
