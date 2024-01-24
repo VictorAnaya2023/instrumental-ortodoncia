@@ -1,6 +1,7 @@
+@if(isLoggedIn){
 <mat-toolbar>
   <span class="logo-container">
-    <img src="../assets/img/paulo blanco.png" alt="" class="logo">
+    <img src="../assets/img/paulo_blanco.png" alt="" class="logo">
   </span>
   <div class="nav-bar-menu">
     @if(!is_Mobile){
@@ -27,9 +28,7 @@
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      @if(isAdmin){
-      <button mat-menu-item>Admin Area</button>
-      }
+      <button mat-menu-item (click)="redirectToAdmin()">Admin Area</button>
       <button mat-menu-item>Notificaciones</button>
       <button mat-menu-item>Mis Archivos</button>
       <button mat-menu-item>Modo Oscuro</button>
@@ -38,6 +37,7 @@
     </mat-menu>
   </div>
 </mat-toolbar>
+}
 
 
 <router-outlet />
