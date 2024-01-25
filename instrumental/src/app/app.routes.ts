@@ -9,5 +9,5 @@ export const routes: Routes = [
   { path:'login', component:LoginComponent },
   { path:'admin-panel', component: AdminPanelComponent, canActivate:[authGuard]},
   { path: 'home', component: HomeComponent, canActivate:[authGuard]},
-  { path: '**', component: NotFoundComponent},
+  { path: '**', component: LoginComponent},
 ];
