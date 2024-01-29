@@ -28,7 +28,7 @@ Schema::create('users', function(Blueprint $table)
     $table->string('gender', 20)->nullable();
     $table->string('email')->unique();
     $table->string('password', 60)->nullable()->change();
-	$table->rememberToken();
+  	$table->rememberToken();
 	$table->timestamps();
 
     $table->collation = config('database.connections.mysql.collation');
