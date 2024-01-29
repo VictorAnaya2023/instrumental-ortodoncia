@@ -1,0 +1,24 @@
+name: Build & Upload Site
+# Run on pushes to the master branch
+on: 
+  push:
+    branches:
+      - mainv2
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    # Install install ncftp
+    - name: Setup Environment.
+      run: |
+        sudo apt-get install -y ncftp
+    
+    # Looks kind of complicated but just uploads the content of _site folder to the ftp server. It does not upload the _site folder itself.
+    - name: Upload site to FTP.
+      env: 
+        ftp_location: ${{ secrets.FTP_LOCATION_BACKEND }} # Pass in required secrets.
+        ftp_username: ${{ secrets.FTP_USERNAME_BACKEND }}
+        ftp_password: ${{ secrets.FTP_PASSWORD_BACKEND }} 
+      run: |
+        ncftpput -R -v -u "$ftp_username" -p "$ftp_password" $ftp_location / /home/runner/work/instrumental-de-ortodoncia/instrumental-de-ortodoncia/backend/*
