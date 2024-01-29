@@ -12,4 +12,19 @@ class UserController extends Controller
     {
         return User::all();
     }
+
+    public function create()
+    {
+        return User::all();
+    }
+
+    public function update()
+    {
+        return User::all();
+    }
+
+    public function destroy()
+    {
+        return User::all();
+    }
 }

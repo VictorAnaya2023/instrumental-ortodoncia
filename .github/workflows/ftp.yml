@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - mainv2
+    paths:
+      - 'backend/**'
+
 jobs:
   build:
     runs-on: ubuntu-latest
