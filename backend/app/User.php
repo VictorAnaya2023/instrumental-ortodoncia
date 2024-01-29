@@ -50,3 +50,15 @@ class User extends Authenticatable
     }
 
 }
+
+class Instrumental extends Authenticatable 
+{
+    use Notifiable;
+
+    protected $fillable = ['name', 'description'];
+
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+    }
+}

@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('users','Api\UserController@index');
+Route::get('instruments','Api\InstrumentalController@index');
