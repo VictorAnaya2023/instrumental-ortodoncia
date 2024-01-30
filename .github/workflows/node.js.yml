@@ -3,8 +3,12 @@ name: Deploy Angular APP
 on:
   push:
     branches: [ "mainv2" ]
+    paths:
+      - 'instrumental/**'
   pull_request:
     branches: [ "mainv2" ]
+    paths:
+      - 'instrumental/**'
 
 jobs:
   build:
