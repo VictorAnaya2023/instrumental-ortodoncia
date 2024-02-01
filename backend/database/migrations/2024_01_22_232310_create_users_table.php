@@ -27,7 +27,7 @@ Schema::create('users', function(Blueprint $table)
     $table->string('avatar_url')->nullable();
     $table->string('gender', 20)->nullable();
     $table->string('email')->unique();
-    $table->string('password', 60)->nullable()->change();
+    $table->string('password', 256)->nullable()->change();
   	$table->rememberToken();
 	$table->timestamps();
 

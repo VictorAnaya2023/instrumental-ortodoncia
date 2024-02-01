@@ -13,14 +13,22 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::get('users'       ,'Api\UserController@index');
-Route::get('user/{id}'   ,'Api\UserController@index');
-Route::delete('user/{id}','Api\UserController@destroy');
-Route::put('user/{id}'   ,'Api\UserController@update');
-Route::post('user'       ,'Api\UserController@crate');
 
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
 
-Route::get('instruments','Api\InstrumentalController@index');
+Route::post('login',    'API\RegisterController@login');
+Route::post('register', 'API\RegisterController@register');
+   
+Route::middleware('auth:api')->group( function () {
+    
+    Route::get('users'       ,'Api\UserController@index');
+    Route::get('user/{id}'   ,'Api\UserController@readbyid');
+    Route::delete('user/{id}','Api\UserController@destroy');
+    Route::put('user/{id}'   ,'Api\UserController@update');
+    Route::post('user'       ,'Api\UserController@create');   
+    
+    Route::get('instruments','Api\InstrumentalController@index');
 
-// Route::post('auth/register', [RegisterController::class, 'register']);
-// Route::post('auth/login', [GetAccessTokenController::class, 'login']);
+});
