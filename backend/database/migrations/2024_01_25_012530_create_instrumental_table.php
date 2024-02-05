@@ -20,9 +20,14 @@ class CreateInstrumentalTable extends Migration
             $table->string('file_name');
             $table->string('mime', 50)->nullable();
             $table->integer('file_size')->nullable()->unsigned();
-            $table->integer('user_id')->nullable();
+            $table->bigInteger('user_id')->unsigned()->index()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->bigInteger('category_id')->unsigned()->index()->nullable();
+            $table->foreign('category_id')->references('id')->on('category')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
+            $table->collation = config('database.connections.mysql.collation');
+            $table->charset = config('database.connections.mysql.charset');
         });
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRolesTable extends Migration
+class CreateCategoryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateRolesTable extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('category', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100)->nullable();
-            $table->string('description', 100)->nullable();
+            $table->string('name');
+            $table->string('description', 150)->nullable();
             $table->timestamps();
-            $table->index('id');
             $table->collation = config('database.connections.mysql.collation');
             $table->charset = config('database.connections.mysql.charset');
-           
         });
     }
 
@@ -32,6 +30,6 @@ class CreateRolesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('category');
     }
 }
