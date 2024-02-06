@@ -12,4 +12,13 @@ class InstrumentalController extends Controller
     {
         return Instrumental::all();
     }
+
+    public function readbyid($id)
+    {
+        $inst = Instrumental::find($id);
+        if (is_null($inst)) {
+            return $this->sendError('Instrumental not found.');
+        }
+        return $inst;
+    }
 }

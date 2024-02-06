@@ -18,8 +18,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('login',    'API\RegisterController@login');
-Route::post('register', 'API\RegisterController@register');
+Route::post('login',    'Api\RegisterController@login');
+Route::post('register', 'Api\RegisterController@register');
    
 Route::middleware('auth:api')->group( function () {
     
@@ -36,5 +36,6 @@ Route::middleware('auth:api')->group( function () {
     Route::post('user'       ,'Api\UserController@create');   
     
     Route::get('instruments','Api\InstrumentalController@index');
+    Route::get('instrument/{id}','Api\InstrumentalController@readbyid');
 
 });
