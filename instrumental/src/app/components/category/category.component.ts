@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { RouterModule } from '@angular/router';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 export interface Tile {
@@ -12,7 +12,7 @@ export interface Tile {
 @Component({
   selector: 'app-category',
   standalone: true,
-  imports: [MatGridListModule, MatCardModule],
+  imports: [RouterModule,MatGridListModule, MatCardModule],
   templateUrl: './category.component.html',
   styleUrl: './category.component.css'
 })

@@ -8,7 +8,7 @@
 <div class="card-container">
     <!-- Aquí se generan las tarjetas dinámicamente -->
     @for (item of categories; track item) {
-    <a href="#">
+    <a [routerLink]="'/videos'">
         <mat-card>
             <mat-card-header>
                 <!-- <div mat-card-avatar class="example-header-image"></div> -->

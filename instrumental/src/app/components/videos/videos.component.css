@@ -1,27 +1,20 @@
-mat-card {
-    margin: 5px 10px;
-}
-
-.video-card {
-    width: 90%;
-    max-height: 200px;
-}
-
-.video-card img {
-    overflow: auto;
-    margin: 0 auto;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-}
-
-.example-card {
-    max-width: 400px;
-}
-
-mat-card {
-    width: calc(100% - 70px);
-    height: calc(100% - 70px);
-}
+.card-container {
+    margin: 1vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Columnas automáticas con un ancho mínimo de 300px */
+    gap: 16px; /* Espacio entre las tarjetas */
+  }
+  
+  mat-card.example-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Para que las tarjetas tengan la misma altura */
+  }
+  
+  mat-card.example-card .mat-card-header {
+    flex: 1; /* Encabezado ocupa el espacio disponible */
+  }
+  
+  mat-card.example-card .mat-card-content {
+    flex: 0; /* Contenido no ocupa espacio adicional */
+  }
