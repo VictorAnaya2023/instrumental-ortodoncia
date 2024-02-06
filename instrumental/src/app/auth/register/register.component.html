@@ -4,19 +4,33 @@
         <mat-card-content>
             <div class="login-container">
                 
+                <mat-form-field>
+                    <mat-label>Nombre</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Apellido</mat-label>
+                    <input matInput>
+                </mat-form-field>
 
                 <mat-form-field>
                     <mat-label>Correo</mat-label>
                     <input matInput>
                 </mat-form-field>
 
-                <mat-form-field>
-                    <mat-label>Usuario</mat-label>
-                    <input matInput>
-                </mat-form-field>
                 
                 <mat-form-field>
                     <mat-label>Ingresa tu contraseña</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Ocultar contrseña'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Confirma tu contraseña</mat-label>
                     <input matInput [type]="hide ? 'password' : 'text'">
                     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Ocultar contrseña'"
                         [attr.aria-pressed]="hide">
