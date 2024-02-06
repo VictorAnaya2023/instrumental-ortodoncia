@@ -33,62 +33,96 @@ export class VideosComponent {
 
   dummy_Data = [
     {
-      "nombre": "Pinza Corte Discal",
-      "video": "/assets/video/demo.mp4",
-      "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
-      "descripcion": "Pinza corte discal",
-      "categoria":"Pinzas de laboratorio"
+        "id": 1,
+        "name": "Pinza Corte Distal",
+        "description": "Pinza Corte Discal",
+        "file_name": "/assets/video/pinza_corte_distal.mp4",
+        "mime": "mp4",
+        "file_size": 18,
+        "user_id": 1,
+        "category_id": 1,
+        "deleted_at": null,
+        "created_at": "2024-02-06T10:34:08.000000Z",
+        "updated_at": null
     },
     {
-      "nombre": "Pinza de Step",
-      "video": "/assets/video/pinza_de_step.mp4",
-      "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
-      "descripcion": "Pinza corte distal",
-      "categoria":"Pinzas de laboratorio"
+        "id": 2,
+        "name": "Pinza de Step",
+        "description": "Pinza de Step",
+        "file_name": "/assets/video/pinza_de_step.mp4",
+        "mime": "mp4",
+        "file_size": 18,
+        "user_id": 1,
+        "category_id": 1,
+        "deleted_at": null,
+        "created_at": "2024-02-06T00:00:00.000000Z",
+        "updated_at": null
     },
     {
-      "nombre": "Pinza Dos Picos Laboratorio",
-      "video": "/assets/video/pinza_dos_picos_laboratorio.mp4",
-      "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
-      "descripcion": "Pinza corte distal",
-      "categoria":"Pinzas de laboratorio"
+        "id": 3,
+        "name": "Pinza Quita Bracket",
+        "description": "Pinza Quita Bracket",
+        "file_name": "/assets/video/pinza_quita_bracket.mp4",
+        "mime": "mp4",
+        "file_size": 18,
+        "user_id": 1,
+        "category_id": 1,
+        "deleted_at": null,
+        "created_at": "2024-02-06T00:00:00.000000Z",
+        "updated_at": null
     },
     {
-      "nombre": "Pinza How",
-      "video": "/assets/video/pinza_how.mp4",
-      "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
-      "descripcion": "Pinza corte distal",
-      "categoria":"Pinzas de laboratorio"
+        "id": 4,
+        "name": "Pinza Z Bend",
+        "description": "Pinza Z Bend",
+        "file_name": "/assets/video/pinza_z_bend.mp4",
+        "mime": "mp4",
+        "file_size": 18,
+        "user_id": 1,
+        "category_id": 1,
+        "deleted_at": null,
+        "created_at": "2024-02-06T00:00:00.000000Z",
+        "updated_at": null
     },
     {
-      "nombre": "Pinza corte distal",
-      "video": "/assets/video/pinza_corte_distal.mp4",
-      "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
-      "descripcion": "Pinza corte distal",
-      "categoria":"Pinzas de laboratorio"
+        "id": 5,
+        "name": "Pinza dos Picos de Laboratorio",
+        "description": "Pinza dos Picos de Laboratorio",
+        "file_name": "/assets/video/pinza_dos_picos_laboratorio.mp4",
+        "mime": "mp4",
+        "file_size": 18,
+        "user_id": 1,
+        "category_id": 1,
+        "deleted_at": null,
+        "created_at": "2024-02-06T00:00:00.000000Z",
+        "updated_at": null
     },
     {
-      "nombre": "Pinza Nance",
-      "video": "/assets/video/pinza_nance.mp4",
-      "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
-      "descripcion": "Pinza corte distal",
-      "categoria":"Pinzas de laboratorio"
-    },    
-    {
-      "nombre": "Pinza Quita Bracket Recta",
-      "video": "/assets/video/pinza_quita_bracket_recta.mp4",
-      "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
-      "descripcion": "Pinza corte distal",
-      "categoria":"Pinzas de laboratorio"
+        "id": 6,
+        "name": "Pinza de How",
+        "description": "Pinza de How",
+        "file_name": "/assets/video/pinza_how.mp4",
+        "mime": "mp4",
+        "file_size": 18,
+        "user_id": 1,
+        "category_id": 1,
+        "deleted_at": null,
+        "created_at": "2024-02-06T00:00:00.000000Z",
+        "updated_at": null
     },
     {
-      "nombre": "Pinza Stop Laboratorio",
-      "video": "/assets/video/pinza_stop_laboratorio.mp4",
-      "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
-      "descripcion": "Pinza corte distal",
-      "categoria":"Pinzas de laboratorio"
-    }
-
-  ]
+        "id": 7,
+        "name": "Pinza Nance",
+        "description": "Pinza Nance",
+        "file_name": "/assets/video/pinza_nance.mp4",
+        "mime": "mp4",
+        "file_size": 18,
+        "user_id": 1,
+        "category_id": 2,
+        "deleted_at": null,
+        "created_at": "2024-02-06T00:00:00.000000Z",
+        "updated_at": null
+    }
+]
 
 }

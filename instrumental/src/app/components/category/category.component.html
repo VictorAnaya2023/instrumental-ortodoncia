@@ -1,0 +1,22 @@
+<!-- <mat-grid-list cols="10" rowHeight="100px">
+    @for (tile of tiles; track tile) {
+    <mat-grid-tile [colspan]="tile.cols" [rowspan]="tile.rows"
+        [style.background]="tile.color">{{tile.text}}</mat-grid-tile>
+    }
+</mat-grid-list> -->
+
+<div class="card-container">
+    <!-- Aquí se generan las tarjetas dinámicamente -->
+    @for (item of categories; track item) {
+    <a href="#">
+        <mat-card>
+            <mat-card-header>
+                <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                <mat-card-title>{{item.name}}</mat-card-title>
+                <mat-card-subtitle>{{item.description}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image [src]="item.image" alt="Photo of the categorie">
+        </mat-card>
+    </a>
+    }
+</div>

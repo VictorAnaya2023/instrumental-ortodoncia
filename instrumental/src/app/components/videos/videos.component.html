@@ -1,10 +1,10 @@
-@for(tool of dummy_Data; track tool.nombre){
+@for(tool of dummy_Data; track tool.name){
 
 <mat-card class="example-card">
     <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>{{ tool.nombre }}</mat-card-title>
-        <mat-card-subtitle>{{ tool.categoria }}</mat-card-subtitle>
+        <mat-card-title>{{ tool.name }}</mat-card-title>
+        <mat-card-subtitle>{{ tool.category_id }}</mat-card-subtitle>
     </mat-card-header>
     <div mat-card-image>
         <vg-player (onPlayerReady)="onPlayerReady($event)">
@@ -25,13 +25,14 @@
                 <vg-volume></vg-volume>
                 <vg-fullscreen></vg-fullscreen>
             </vg-controls>
-            <video [vgMedia]="$any(media)" #media id="singleVideo" preload="auto" src="{{ tool.video }}" crossorigin>
+            <video [vgMedia]="$any(media)" #media id="singleVideo" preload="auto" src="{{ tool.file_name }}"
+                crossorigin>
             </video>
         </vg-player>
     </div>
     <mat-card-content>
         <p>
-            {{ tool.descripcion }}
+            {{ tool.description }}
         </p>
     </mat-card-content>
 </mat-card>
