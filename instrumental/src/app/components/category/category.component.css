@@ -9,6 +9,11 @@ mat-grid-tile {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Las tarjetas tienen un ancho mínimo de 250px y se ajustan automáticamente al tamaño del contenedor */
   }
   
+  a {
+    color: inherit; /* Inherit the color from the parent element */
+    text-decoration: none; /* Remove underline */
+  }
+
   mat-card {
     width: 100%; /* Ajustar el ancho de la tarjeta al 100% del contenedor */
   }

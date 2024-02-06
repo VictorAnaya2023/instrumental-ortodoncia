@@ -8,13 +8,15 @@
 <div class="card-container">
     <!-- Aquí se generan las tarjetas dinámicamente -->
     @for (item of categories; track item) {
-    <mat-card>
-        <mat-card-header>
-            <!-- <div mat-card-avatar class="example-header-image"></div> -->
-            <mat-card-title>{{item.name}}</mat-card-title>
-            <mat-card-subtitle>{{item.description}}</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image [src]="item.image" alt="Photo of the categorie">
-    </mat-card>
+    <a href="#">
+        <mat-card>
+            <mat-card-header>
+                <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                <mat-card-title>{{item.name}}</mat-card-title>
+                <mat-card-subtitle>{{item.description}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image [src]="item.image" alt="Photo of the categorie">
+        </mat-card>
+    </a>
     }
 </div>
