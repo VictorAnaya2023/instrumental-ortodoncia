@@ -34,56 +34,56 @@ export class VideosComponent {
   dummy_Data = [
     {
       "nombre": "Pinza Corte Discal",
-      "video": "https://instrumentaldeortodoncia.com/assets/video/demo.mp4",
+      "video": "/assets/video/demo.mp4",
       "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
       "descripcion": "Pinza corte discal",
       "categoria":"Pinzas de laboratorio"
     },
     {
       "nombre": "Pinza de Step",
-      "video": "https://instrumentaldeortodoncia.com/assets/video/pinza_de_step.mp4",
+      "video": "/assets/video/pinza_de_step.mp4",
       "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
       "descripcion": "Pinza corte distal",
       "categoria":"Pinzas de laboratorio"
     },
     {
       "nombre": "Pinza Dos Picos Laboratorio",
-      "video": "https://instrumentaldeortodoncia.com/assets/video/pinza_dos_picos_laboratorio.mp4",
+      "video": "/assets/video/pinza_dos_picos_laboratorio.mp4",
       "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
       "descripcion": "Pinza corte distal",
       "categoria":"Pinzas de laboratorio"
     },
     {
       "nombre": "Pinza How",
-      "video": "https://instrumentaldeortodoncia.com/assets/video/pinza_how.mp4",
+      "video": "/assets/video/pinza_how.mp4",
       "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
       "descripcion": "Pinza corte distal",
       "categoria":"Pinzas de laboratorio"
     },
     {
       "nombre": "Pinza corte distal",
-      "video": "https://instrumentaldeortodoncia.com/assets/video/pinza_corte_distal.mp4",
+      "video": "/assets/video/pinza_corte_distal.mp4",
       "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
       "descripcion": "Pinza corte distal",
       "categoria":"Pinzas de laboratorio"
     },
     {
       "nombre": "Pinza Nance",
-      "video": "https://instrumentaldeortodoncia.com/assets/video/pinza_nance.mp4",
+      "video": "/assets/video/pinza_nance.mp4",
       "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
       "descripcion": "Pinza corte distal",
       "categoria":"Pinzas de laboratorio"
     },    
     {
       "nombre": "Pinza Quita Bracket Recta",
-      "video": "https://instrumentaldeortodoncia.com/assets/video/pinza_quita_bracket_recta.mp4",
+      "video": "/assets/video/pinza_quita_bracket_recta.mp4",
       "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
       "descripcion": "Pinza corte distal",
       "categoria":"Pinzas de laboratorio"
     },
     {
       "nombre": "Pinza Stop Laboratorio",
-      "video": "https://instrumentaldeortodoncia.com/assets/video/pinza_stop_laboratorio.mp4",
+      "video": "/assets/video/pinza_stop_laboratorio.mp4",
       "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
       "descripcion": "Pinza corte distal",
       "categoria":"Pinzas de laboratorio"
