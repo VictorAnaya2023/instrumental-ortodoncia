@@ -1,13 +1,13 @@
-mat-card{
+mat-card {
     margin: 5px 10px;
 }
 
-.video-card{
+.video-card {
     width: 90%;
     max-height: 200px;
 }
 
-.video-card img{
+.video-card img {
     overflow: auto;
     margin: 0 auto;
     border-radius: 10px;
@@ -15,4 +15,13 @@ mat-card{
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+}
+
+.example-card {
+    max-width: 400px;
+}
+
+mat-card {
+    width: calc(100% - 70px);
+    height: calc(100% - 70px);
 }

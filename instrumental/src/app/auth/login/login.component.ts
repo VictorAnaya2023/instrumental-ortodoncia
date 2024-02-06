@@ -4,6 +4,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatDivider} from '@angular/material/divider';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 @Component({
@@ -15,6 +16,7 @@ import { Router } from '@angular/router';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    MatDivider,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
@@ -31,5 +33,9 @@ export class LoginComponent {
     // Redirige al usuario a la ruta deseada (por ejemplo, '/home')
     this.router.navigate(['/admin-panel']);
     this.router.navigate(['/home']);
+  }
+
+  register(): void {
+    this.router.navigate(['/register']);
   }
 }

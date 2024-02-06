@@ -1,1 +1,32 @@
-<p>register works!</p>
+<div class="main-container">
+    <mat-card>
+        <img mat-card-image src="../../../assets/img/paulo_blanco.png" alt="Logo Instrumental de Ortodoncia Paulo Salgado">
+        <mat-card-content>
+            <div class="login-container">
+                
+
+                <mat-form-field>
+                    <mat-label>Correo</mat-label>
+                    <input matInput>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Usuario</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                
+                <mat-form-field>
+                    <mat-label>Ingresa tu contraseña</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Ocultar contrseña'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+               
+                <mat-divider></mat-divider>
+                <button mat-raised-button color="primary" type="submit" (click)="register()">Crear cuenta</button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

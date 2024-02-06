@@ -15,7 +15,10 @@
                         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
                 </mat-form-field>
-                <button mat-raised-button type="submit" (click)="login()">Iniciar Sesión</button>
+                <button mat-raised-button type="submit" (click)="login()">Iniciar Sesión</button>          
+                
+                <mat-divider></mat-divider>
+                <button mat-raised-button color="primary" type="submit" (click)="register()">Registrarse</button>
             </div>
         </mat-card-content>
     </mat-card>
