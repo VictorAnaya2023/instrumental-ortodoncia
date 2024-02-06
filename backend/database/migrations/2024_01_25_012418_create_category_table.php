@@ -17,6 +17,7 @@ class CreateCategoryTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('description', 150)->nullable();
+            $table->string('image', 256)->nullable();
             $table->timestamps();
             $table->collation = config('database.connections.mysql.collation');
             $table->charset = config('database.connections.mysql.charset');

@@ -11,6 +11,8 @@ class Instrumental extends Authenticatable
 {
     use Notifiable;
 
+    protected $table = 'instrumental';
+
     protected $fillable = ['name', 'description'];
 
     public function __construct(array $attributes = [])

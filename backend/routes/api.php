@@ -23,6 +23,12 @@ Route::post('register', 'API\RegisterController@register');
    
 Route::middleware('auth:api')->group( function () {
     
+    Route::get('categories'       ,'Api\CategoryController@index');
+    Route::get('category/{id}'   ,'Api\CategoryController@readbyid');
+    Route::post('category'       ,'Api\CategoryController@create');   
+    Route::delete('category/{id}','Api\CategoryController@destroy');
+    Route::put('category/{id}'   ,'Api\CategoryController@update');
+
     Route::get('users'       ,'Api\UserController@index');
     Route::get('user/{id}'   ,'Api\UserController@readbyid');
     Route::delete('user/{id}','Api\UserController@destroy');
