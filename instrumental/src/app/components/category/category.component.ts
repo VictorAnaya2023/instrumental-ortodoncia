@@ -49,45 +49,5 @@ export class CategoryComponent {
         "created_at": "2024-02-06T16:22:11.000000Z",
         "updated_at": "2024-02-06T16:26:56.000000Z"
     },
-    {
-        "id": 3,
-        "name": "De Lujo",
-        "description": "Pinzas de Lujo",
-        "image": "/assets/img/paulo_blanco.png",
-        "created_at": "2024-02-06T16:22:11.000000Z",
-        "updated_at": "2024-02-06T16:26:56.000000Z"
-    },
-    {
-        "id": 3,
-        "name": "De Lujo",
-        "description": "Pinzas de Lujo",
-        "image": "/assets/img/paulo_blanco.png",
-        "created_at": "2024-02-06T16:22:11.000000Z",
-        "updated_at": "2024-02-06T16:26:56.000000Z"
-    },
-    {
-        "id": 3,
-        "name": "De Lujo",
-        "description": "Pinzas de Lujo",
-        "image": "/assets/img/paulo_blanco.png",
-        "created_at": "2024-02-06T16:22:11.000000Z",
-        "updated_at": "2024-02-06T16:26:56.000000Z"
-    },
-    {
-        "id": 3,
-        "name": "De Lujo",
-        "description": "Pinzas de Lujo",
-        "image": "/assets/img/paulo_blanco.png",
-        "created_at": "2024-02-06T16:22:11.000000Z",
-        "updated_at": "2024-02-06T16:26:56.000000Z"
-    },
-    {
-        "id": 3,
-        "name": "De Lujo",
-        "description": "Pinzas de Lujo",
-        "image": "/assets/img/paulo_blanco.png",
-        "created_at": "2024-02-06T16:22:11.000000Z",
-        "updated_at": "2024-02-06T16:26:56.000000Z"
-    },
 ]
 }
