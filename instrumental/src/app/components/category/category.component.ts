@@ -29,7 +29,7 @@ export class CategoryComponent {
         "id": 1,
         "name": "Laboratorio",
         "description": "Pinzas de Laboratorio",
-        "image": "/assets/img/paulo_blanco.png",
+        "image": "/assets/img/paulo_blanco.webp",
         "created_at": "2024-02-06T15:48:52.000000Z",
         "updated_at": "-000001-11-30T00:00:00.000000Z"
     },
@@ -37,7 +37,7 @@ export class CategoryComponent {
         "id": 2,
         "name": "Especiales",
         "description": "Pinzas Especiales",
-        "image": "/assets/img/paulo_blanco.png",
+        "image": "/assets/img/paulo_blanco.webp",
         "created_at": "2024-02-06T16:21:01.000000Z",
         "updated_at": "2024-02-06T16:21:01.000000Z"
     },
@@ -45,7 +45,7 @@ export class CategoryComponent {
         "id": 3,
         "name": "De Lujo",
         "description": "Pinzas de Lujo",
-        "image": "/assets/img/paulo_blanco.png",
+        "image": "/assets/img/paulo_blanco.webp",
         "created_at": "2024-02-06T16:22:11.000000Z",
         "updated_at": "2024-02-06T16:26:56.000000Z"
     },

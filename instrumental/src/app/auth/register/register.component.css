@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center; /* Alinea verticalmente en el centro */
     height: 100vh; /* Ajusta la altura al 100% del viewport para centrar verticalmente */
-    background-image: url('../../../assets/img/background_web2.jpg');
+    background-image: url('../../../assets/img/background_web2.webp');
     background-size: cover;
   }
   
