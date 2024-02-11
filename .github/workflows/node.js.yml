@@ -32,9 +32,19 @@ jobs:
     - run: npm ci instrumental
     - run: npm --prefix ./instrumental run-script deploy
    
+    - name: Clean Angular old files
+      uses: StephanThierry/ftp-delete-action@v2.1
+      with:
+        host: ${{ secrets.FTP_LOCATION }}
+        user: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        remoteFiles: "main*.js;chunk*.js;styles*.js;polyfills*js"
+        remoteDirectories: ""
+        workingDir: "."
+        ignoreSSL: "1"
+
     - name: Setup Environment.
       run: sudo apt-get install -y ncftp
-
     # Looks kind of complicated but just uploads the content of _site folder to the ftp server. It does not upload the _site folder itself.
     - name: Upload site to FTP.
       env: 
