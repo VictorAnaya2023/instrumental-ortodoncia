@@ -15,6 +15,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { AuthService } from './services/auth.service';
+import { CookieService } from 'ngx-cookie-service';
 
 interface Video {
   nombre: string;
@@ -47,6 +48,7 @@ interface Video {
 export class AppComponent implements OnInit {
   isLoggedIn!:boolean;
   constructor(
+    private cookieService: CookieService,
     private responsive: BreakpointObserver,
     private authService:AuthService,
     private router: Router) {
@@ -62,6 +64,7 @@ export class AppComponent implements OnInit {
   is_Mobile:boolean = false;
   isAdmin:boolean = false;
   myControl = new FormControl('');
+ 
   dummy_Data:Video[] = [
     {
       "nombre": "Video 1",
@@ -80,99 +83,19 @@ export class AppComponent implements OnInit {
       "video": "https://www.youtube.com/watch?v=video3",
       "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
       "descripcion": "Descripción del Video 3"
-    },
-    {
-      "nombre": "Video 4",
-      "video": "https://www.youtube.com/watch?v=video4",
-      "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
-      "descripcion": "Descripción del Video 4"
-    },
-    {
-      "nombre": "Video 5",
-      "video": "https://www.youtube.com/watch?v=video5",
-      "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
-      "descripcion": "Descripción del Video 5"
-    },
-    {
-      "nombre": "Video 6",
-      "video": "https://www.youtube.com/watch?v=video6",
-      "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
-      "descripcion": "Descripción del Video 6"
-    },
-    {
-      "nombre": "Video 7",
-      "video": "https://www.youtube.com/watch?v=video7",
-      "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
-      "descripcion": "Descripción del Video 7"
-    },
-    {
-      "nombre": "Video 8",
-      "video": "https://www.youtube.com/watch?v=video8",
-      "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
-      "descripcion": "Descripción del Video 8"
-    },
-    {
-      "nombre": "Video 9",
-      "video": "https://www.youtube.com/watch?v=video9",
-      "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
-      "descripcion": "Descripción del Video 9"
-    },
-    {
-      "nombre": "Video 10",
-      "video": "https://www.youtube.com/watch?v=video9",
-      "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
-      "descripcion": "Descripción del Video 9"
-    },
-    {
-      "nombre": "Video 11",
-      "video": "https://www.youtube.com/watch?v=video9",
-      "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
-      "descripcion": "Descripción del Video 9"
-    },
-    {
-      "nombre": "Video 12",
-      "video": "https://www.youtube.com/watch?v=video9",
-      "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
-      "descripcion": "Descripción del Video 9"
-    },
-    {
-      "nombre": "Video 13",
-      "video": "https://www.youtube.com/watch?v=video9",
-      "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
-      "descripcion": "Descripción del Video 9"
-    },
-    {
-      "nombre": "Video 14",
-      "video": "https://www.youtube.com/watch?v=video9",
-      "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
-      "descripcion": "Descripción del Video 9"
-    },
-    {
-      "nombre": "Video 15",
-      "video": "https://www.youtube.com/watch?v=video9",
-      "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
-      "descripcion": "Descripción del Video 9"
-    },
-    {
-      "nombre": "Video 16",
-      "video": "https://www.youtube.com/watch?v=video9",
-      "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
-      "descripcion": "Descripción del Video 9"
-    },
-    {
-      "nombre": "Video 17",
-      "video": "https://www.youtube.com/watch?v=video9",
-      "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
-      "descripcion": "Descripción del Video 9"
-    },
-    {
-      "nombre": "Video 18",
-      "video": "https://www.youtube.com/watch?v=video10",
-      "imagen": "https://ddazul.com/productos/20191111111930-32fd022c748bcd7471b833d6186846b0.jpg",
-      "descripcion": "Descripción del Video 10"
     }
   ]
   filteredOptions!: Observable<Video[]>;
+
+
+  logout() {
+    try {
+      this.cookieService.delete('accessToken');
+      this.router.navigate(['/login']);
+    }
+    catch (error) {
+    }
+  }
 
   ngOnInit() {
     this.isLoggedIn = this.authService.isAuth();

@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import {MatCardModule} from '@angular/material/card';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatDivider} from '@angular/material/divider';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDivider } from '@angular/material/divider';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 
-import {CookieService} from 'ngx-cookie-service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -34,11 +34,11 @@ export class LoginComponent {
   hide = true;
 
   constructor(
-    private authService: AuthService, 
-    private router: Router, 
+    private authService: AuthService,
+    private router: Router,
     private cookieService: CookieService,
     private _snackBar: MatSnackBar
-  ){}
+  ) { }
   durationInSeconds = 5;
   openSnackBar() {
     this._snackBar.openFromComponent(incorrectPassComponent, {
@@ -47,20 +47,20 @@ export class LoginComponent {
   }
 
   login(): void {
-    try{
+    try {
       this.authService.login(this.username, this.password).subscribe({
-        next:(res:any)=>{
+        next: (res: any) => {
           this.cookieService.set('accessToken', res.data.token, undefined, '/', undefined, true, 'Strict');
         },
-        error:(resErr)=>{
+        error: (resErr) => {
           this.openSnackBar();
         },
-        complete:()=>{
-          this.router.navigate(['/admin-panel']);
+        complete: () => {
+          this.router.navigate(['/home']);
         }
       })
     }
-    catch(error){
+    catch (error) {
 
     }
     // Realiza la lógica de autenticación
@@ -88,4 +88,4 @@ export class LoginComponent {
   ],
   standalone: true,
 })
-export class incorrectPassComponent {}
+export class incorrectPassComponent { }

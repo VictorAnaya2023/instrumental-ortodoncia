@@ -6,23 +6,22 @@
                 
                 <mat-form-field>
                     <mat-label>Nombre</mat-label>
-                    <input matInput>
+                    <input matInput [(ngModel)]="this.name">
                 </mat-form-field>
-
+                
                 <mat-form-field>
                     <mat-label>Apellido</mat-label>
-                    <input matInput>
+                    <input matInput [(ngModel)]="this.last_name">
                 </mat-form-field>
 
                 <mat-form-field>
                     <mat-label>Correo</mat-label>
-                    <input matInput>
+                    <input matInput [(ngModel)]="this.email">
                 </mat-form-field>
-
                 
                 <mat-form-field>
                     <mat-label>Ingresa tu contraseña</mat-label>
-                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <input matInput [type]="hide ? 'password' : 'text'"  [(ngModel)]="this.password">
                     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Ocultar contrseña'"
                         [attr.aria-pressed]="hide">
                         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -31,7 +30,7 @@
 
                 <mat-form-field>
                     <mat-label>Confirma tu contraseña</mat-label>
-                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="this.c_password" >
                     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Ocultar contrseña'"
                         [attr.aria-pressed]="hide">
                         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
