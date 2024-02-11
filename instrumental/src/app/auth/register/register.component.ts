@@ -62,7 +62,7 @@ export class RegisterComponent {
     try {
       this.authService.register(this.name, this.last_name, this.email, this.password, this.c_password).subscribe({
         next: (res: any) => {
-          //this.cookieService.set('accessToken', res.data.token, undefined, '/', undefined, true, 'Strict');
+          this.cookieService.set('accessToken', res.data.token, undefined, '/', undefined, true, 'Strict');
         },
         error: (resErr) => {
           this.openSnackBar();

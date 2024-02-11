@@ -2,6 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 
+import { environment } from '../../environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +17,7 @@ export class AuthService {
     body.set('email', username);
     body.set('password', password);
     const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
-    return this.http.post('https://api.instrumentaldeortodoncia.com/api/login', body.toString(), { headers })
+    return this.http.post(`${environment.apiUrl}/api/login`, body.toString(), { headers });
   }
 
   register(name: string, lastname: string, email: string, password: string,c_password:string) {
@@ -27,7 +29,7 @@ export class AuthService {
     body.set('password', password);
     body.set('c_password', c_password);
     const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
-    return this.http.post('https://api.instrumentaldeortodoncia.com/api/register', body.toString(), { headers })
+    return this.http.post(`${environment.apiUrl}/api/register`, body.toString(), { headers });
   }
 
   checkAccessTokenCookie() {
